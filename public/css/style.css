@@ -1,25 +1,76 @@
-header, .project:not(:last-child) {
-    border-bottom: 1px solid #ccc;
-  }
+/********************************** main.handlebars **********************************/
+.blognav {
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  width: 100%;
+  background-color: #111;
+  border-bottom: 1px solid #e6e6e6
+}
+
+.blognav-left {
+  padding-left: 32px;
+}
+
+.blognav-right {
+  padding-right: 32px;
+}
+
+.blognav .blognav-left p {
+  background-color: #fff;
+  color: #111;
+  font-weight: 800;
+  border-radius: 4px;
+}
+
+.blognav-center {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.blognav p {
+  padding: 8px 8px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.blognav a {
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 24px 32px;
+}
+
+.blognav-present {
+  margin-top: 80px;
+}
+
+.project:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
+
+.no-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #1b89bc;
+  text-decoration: none;
+  font-size: 100%;
+}
+
+.no-button:hover {
+  color: #065b83;
+  text-decoration: underline;
+}
   
-  .no-button {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    color: #1b89bc;
-    text-decoration: none;
-    font-size: 100%;
-  }
-  
-  .no-button:hover {
-    color: #065b83;
-    text-decoration: underline;
-  }
-  
-  .dollar-amount {
-    color: #056605;
-    font-weight: bold;
-    margin-left: -5px;
-  }
   

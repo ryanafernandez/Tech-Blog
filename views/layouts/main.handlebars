@@ -5,28 +5,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech Blog</title>
-  {{!-- <link rel="stylesheet" href="/css/jass.css"> --}}
+  <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">The Tech Blog</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
+    <header class="blognav">
+      <div class="blognav-left">
+        <a href="/">
+          <p>THE TECH BLOG</p>
+        </a>
+      </div>
+      <div class="blognav-center">
+        <div class="nav-link-item">
+          <a href="/">
+            <p>HOME</p>
+          </a>
+        </div>
+        <div class="nav-link-item">
+          {{#if logged_in}}
+          <a href="/dashboard">
+          {{else}}
+          <a href="/login">
+          {{/if}}
+            <p>DASHBOARD</p>
+          </a>
+        </div>
+      </div>
+      <div class="blognav-right">
         {{#if logged_in}}
-        {{!-- <a href="/profile">profile</a> | --}}
         <button class="no-button" id="logout">logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a href="/login">
+          <p>LOGIN</p>
+        </a>
         {{/if}}
-      </nav>
+      </div>
     </header>
-    <main class="container container-fluid mt-5">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    
+    <main class="blognav-present">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
