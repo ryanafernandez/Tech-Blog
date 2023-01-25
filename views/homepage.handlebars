@@ -3,16 +3,15 @@
 <div class="row mb-4 project">
   <div class="col-md-5">
     <h2>
-      {{!-- <a href="/project/{{blogPost.id}}">{{blogPost.title}}</a> --}}
-      {{blogPost.title}}
+      <a href="/blogpost/{{blogPost.id}}">{{blogPost.title}}</a>
     </h2>
 
     <p>Created by {{blogPost.user.name}} on {{format_date blogPost.date_created}}</p>
   </div>
   <div class="col-md-7">
-    <p>
+    {{!-- <p>
       {{blogPost.content}}
-    </p>
+    </p> --}}
   </div>
 </div>
 {{/each}}
