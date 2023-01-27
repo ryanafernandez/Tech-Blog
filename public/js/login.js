@@ -1,10 +1,6 @@
 const loginFormEl = $('.login-form');
 const loginEmailEl = $('#email-login');
 const loginPasswordEl = $('#password-login');
-const signUpFormEl = $('.signup-form');
-const signUpNameEl = $('#name-signup');
-const signUpEmailEl = $('#email-signup');
-const signUpPasswordEl = $('#password-signup');
 
 loginFormEl.on('submit', async (event) => {
   event.preventDefault();
