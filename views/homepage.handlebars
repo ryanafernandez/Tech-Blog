@@ -1,14 +1,14 @@
 <section class="homepage-container">
   <!-- Loop over each object in the projects array -->
   {{#each blogPosts as |blogPost| }}
-  <div class="blogPost">
-    <div class="blogPost-header">
+  <div class="blogpost">
+    <div class="blogpost-header">
       <h2>
         <a href="/blogpost/{{blogPost.id}}">{{blogPost.title}}</a>
       </h2>
       <p>Created by {{blogPost.user.name}} on {{format_date blogPost.date_created}}</p>
     </div>
-    <div class="blogPost-content">
+    <div class="blogpost-content">
       <p>{{blogPost.content}}</p>
     </div>
   </div>

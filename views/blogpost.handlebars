@@ -1,18 +1,16 @@
 <div class="blogpost-container">
-  <div class="blogPost">
-    <div class="blogPost-header">
+  <section class="blogpost">
+    <div class="blogpost-header">
       <h2>
         <p>{{title}}</p>
       </h2>
       <p>Created by {{user.name}} on {{format_date date_created}}</p>
     </div>
-    <div class="blogPost-content">
+    <div class="blogpost-content">
       <p>{{content}}</p>
     </div>
-  </div>
-  
-
-  <p>
-    <button class="btn btn-primary">Leave a comment</button>
-  </p>
+    <div class="blogpost-footer">
+      <p><a href="/blogpost/{{id}}/comment/">Leave a comment</a> for {{user.name}}.</p>
+    </div>
+  </section>
 </div>
