@@ -1,1 +1,27 @@
-<p>my dashboard</p>
+<section class="dashboard-container">
+    <section class="dashboard-controls">
+        <a href="./dashboard/create" id="create">Create a new post</a>
+    </section>
+    <section class="my-posts">
+        <section class="my-posts-header">
+
+        </section>
+        <section class="my-posts-body">
+            {{#if blogPosts.length }}
+            {{#each blogPosts as |blogPost| }}
+            <div class="blogpost">
+                <div class="blogpost-header">
+                    <h2>
+                        <a>{{blogPost.title}}</a>
+                    </h2>
+                    <p>Created on {{format_date blogPost.date_created}}</p>
+                </div>
+                <div class="blogpost-content">
+                    <p>{{blogPost.content}}</p>
+                </div>
+            </div>
+            {{/each}}
+            {{/if}}
+        </section>
+    </section>
+</section>
