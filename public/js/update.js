@@ -18,7 +18,7 @@ updateBtn.on('click', async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/dashboard');
+            document.location.replace(`/dashboard/edit/${id}`);
         } else {
             alert(response.statusText);
         }

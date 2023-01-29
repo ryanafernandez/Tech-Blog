@@ -19,7 +19,7 @@ submitBtn.on('click', async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace(`/api/blogposts/${blogpost_id}`);
         } else {
             alert(response.statusText);
         }

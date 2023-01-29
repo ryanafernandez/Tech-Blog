@@ -1,14 +1,20 @@
-const updateBtn = $('#update-btn');
 const deleteBtn = $('#delete-btn');
-
-updateBtn.on('click', async (event) => {
-    event.preventDefault();
-
-    console.log('clicked update');
-});
+const blogPostEl = $('.blogpost');
 
 deleteBtn.on('click', async (event) => {
     event.preventDefault();
     
-    console.log('clicked delete');
-})
+    const id = blogPostEl.attr('id');
+
+    if (id) {
+        const response = await fetch(`/api/blogposts/${id}`, {
+            method: 'DELETE'
+        });
+
+        if (response.ok) {
+            document.location.replace('/dashboard');
+        } else {
+            alert(response.statusText);
+        }
+    }
+});
