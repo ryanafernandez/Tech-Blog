@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { BlogPost, User } = require("../../models");
+const { BlogPost, User, Comment } = require("../../models");
 
 router.get('/:id', async (req, res) => {
     try {
@@ -9,11 +9,20 @@ router.get('/:id', async (req, res) => {
                     model: User,
                     attributes: ['name'],
                 },
+                {
+                    model: Comment,
+                    attributes: ['content', 'date_created'],
+                    include: [
+                        {
+                            model: User,
+                            attributes: ['name'],
+                        }
+                    ]
+                },
             ],
         });
 
         const blogPost = blogPostData.get({ plain: true });
-
         res.render('blogpost', {
             ...blogPost,
             logged_in: req.session.logged_in
@@ -23,7 +32,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.get('/:id/comment', async(req, res) => {
+router.get('/comment/:id', async(req, res) => {
     try {
         const blogPostData = await BlogPost.findByPk(req.params.id, {
             include: [
@@ -56,4 +65,5 @@ router.post('/', async (req, res) => {
     }
 });
 
+router.put('/:id')
 module.exports = router;
