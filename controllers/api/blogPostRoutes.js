@@ -66,5 +66,22 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.put('/:id')
+router.put('/:id', async (req, res) => {
+    try {
+        const blogPostData = await BlogPost.update(
+            req.body,
+            { where: { id: req.params.id  }
+        });
+
+        if (!blogPostData) {
+            res.status(404).json({ message: 'No blog post found with that id.' });
+            return;
+        }
+
+        res.status(200).json(blogPostData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;
