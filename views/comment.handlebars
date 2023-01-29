@@ -1,6 +1,6 @@
 <div class="blogpost-container">
-  <section class="blogpost">
-    <div class="blogpost-header" blogpost-id="{{id}}">
+  <section class="blogpost" blogpost-id="{{id}}">
+    <div class="blogpost-header">
       <h2>
         <p>{{title}}</p>
       </h2>
@@ -12,7 +12,7 @@
   </section>
   
   <section class="new-comment-wrapper">
-    <div class="new-comment">
+    <div class="new-comment" user-id="{{logged_in_user}}">
       <div class="form-group">
         <label for="comment-content"></label>
         <input class="form-input" type="text" id="comment-content" placeholder="Let {{user.name}} know what you think"/>

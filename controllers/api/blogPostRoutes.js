@@ -24,7 +24,7 @@ router.get('/:id', async (req, res) => {
 
         const blogPost = blogPostData.get({ plain: true });
         res.render('blogpost', {
-            ...blogPost,
+            ...blogPost, 
             logged_in: req.session.logged_in
         });
     } catch (err) {
@@ -47,6 +47,7 @@ router.get('/comment/:id', async(req, res) => {
 
         res.render('comment', {
             ...blogPost,
+            logged_in_user: req.session.user_id,
             logged_in: req.session.logged_in
         });
     } catch (err) {
