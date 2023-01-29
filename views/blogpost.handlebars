@@ -10,7 +10,11 @@
       <p>{{content}}</p>
     </div>
     <div class="blogpost-footer">
+      {{#if logged_in}}
       <p><a href="/api/blogposts/comment/{{id}}">Leave a comment</a> for {{user.name}}.</p>
+      {{else}}
+      <p><a href="/login">Login</a> to leave a comment.</p>
+      {{/if}}
     </div>
   </section>
 
