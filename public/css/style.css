@@ -116,7 +116,8 @@ main {
 
 /********************************** login.handlebars **********************************/
 .login-container,
-.signup-container {
+.signup-container,
+.create-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -124,7 +125,8 @@ main {
 }
 
 .login-form,
-.signup-form {
+.signup-form,
+.create-form {
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -134,14 +136,16 @@ main {
 }
 
 .login-form h2,
-.signup-form h2 {
+.signup-form h2,
+.create-form h2 {
   background-color: #e2d0b7;
   padding: 8px;
   border-bottom: #808080 solid 1px;
 }
 
 .login-body,
-.signup-body {
+.signup-body,
+.create-body {
   display: flex;
   flex-direction: column;
   align-items: center;

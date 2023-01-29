@@ -43,48 +43,15 @@ router.get('/dashboard', withAuth, async (req, res) => {
     }
 });
 
-router.get('/blogpost/:id', async (req, res) => {
+router.get('/dashboard/create', withAuth, async (req, res) => {
     try {
-        const blogPostData = await BlogPost.findByPk(req.params.id, {
-            include: [
-                {
-                    model: User,
-                    attributes: ['name'],
-                },
-            ],
-        });
-
-        const blogPost = blogPostData.get({ plain: true });
-
-        res.render('blogpost', {
-            ...blogPost,
+        res.render('create', {
             logged_in: req.session.logged_in
         });
     } catch (err) {
         res.status(500).json(err);
     }
-});
-
-router.get('/blogpost/:id/comment', async(req, res) => {
-    try {
-        const blogPostData = await BlogPost.findByPk(req.params.id, {
-            include: [
-                {
-                    model: User,
-                    attributes: ['name'],
-                },
-            ],
-        });
-
-        const blogPost = blogPostData.get({ plain: true });
-
-        res.render('comment', {
-            ...blogPost,
-            logged_in: req.session.logged_in
-        });
-    } catch (err) {
-        res.status(500).json(err);
-    }
+    
 });
 
 router.get('/login', (req, res) => {
