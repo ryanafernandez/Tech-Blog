@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const { BlogPost } = require("../../models");
+const { BlogPost, User } = require("../../models");
 
-router.get('/blogpost/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const blogPostData = await BlogPost.findByPk(req.params.id, {
             include: [
@@ -23,7 +23,7 @@ router.get('/blogpost/:id', async (req, res) => {
     }
 });
 
-router.get('/blogpost/:id/comment', async(req, res) => {
+router.get('/:id/comment', async(req, res) => {
     try {
         const blogPostData = await BlogPost.findByPk(req.params.id, {
             include: [
@@ -50,7 +50,7 @@ router.post('/', async (req, res) => {
         const blogPostData = await BlogPost.create(req.body);
 
         res.status(200).json(blogPostData);
-        
+
     } catch (err) {
         res.status(400).json(err);
     }

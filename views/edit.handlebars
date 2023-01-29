@@ -1,0 +1,19 @@
+<div class="edit-container">
+    <section class="edit-controls">
+        <button class="btn btn-primary" type="submit" id="update-btn">Update</button>
+        <button class="btn btn-primary" type="submit" id="delete-btn">Delete</button>
+    </section>
+    <section class="blogpost">
+        <div class="blogpost-header">
+            <h2>
+            <p>{{title}}</p>
+            </h2>
+            <p>Created by {{user.name}} on {{format_date date_created}}</p>
+        </div>
+        <div class="blogpost-content">
+            <p>{{content}}</p>
+        </div>
+    </section>
+</div>
+
+<script src="/js/edit.js"></script>
