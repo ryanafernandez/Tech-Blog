@@ -14,6 +14,20 @@
             <p>{{content}}</p>
         </div>
     </section>
+
+    {{#if comments.length}}
+    {{#each comments as |comment| }}
+    <section class="comment">
+        <div class="comment-header">
+        <h2>{{comment.user.name}}</h2>
+        <p>{{format_date comment.date_created}}</p>
+        </div>
+        <div class="comment-content">
+        <p>{{comment.content}}</p>
+        </div>
+    </section>
+    {{/each}}
+    {{/if}}
 </div>
 
 <script src="/js/edit.js"></script>

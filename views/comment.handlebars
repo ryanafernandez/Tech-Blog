@@ -1,6 +1,6 @@
 <div class="blogpost-container">
   <section class="blogpost">
-    <div class="blogpost-header">
+    <div class="blogpost-header" blogpost-id="{{id}}">
       <h2>
         <p>{{title}}</p>
       </h2>
@@ -14,11 +14,12 @@
   <section class="new-comment-wrapper">
     <div class="new-comment">
       <div class="form-group">
-        <label for="leave-comment"></label>
-        <input class="form-input" type="text" id="leave-comment" placeholder="Let {{user.name}} know what you think"/>
+        <label for="comment-content"></label>
+        <input class="form-input" type="text" id="comment-content" placeholder="Let {{user.name}} know what you think"/>
       </div>
       <button class="btn btn-primary" id="submit-comment">Submit</button>
     </div>
   </section>
-
 </div>
+
+<script src="/js/comment.js"></script>

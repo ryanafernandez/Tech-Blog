@@ -10,7 +10,19 @@
       <p>{{content}}</p>
     </div>
     <div class="blogpost-footer">
-      <p><a href="/blogpost/{{id}}/comment/">Leave a comment</a> for {{user.name}}.</p>
+      <p><a href="/api/blogposts/comment/{{id}}">Leave a comment</a> for {{user.name}}.</p>
     </div>
   </section>
+
+  {{#each comments as |comment| }}
+  <section class="comment">
+    <div class="comment-header">
+      <h2>{{comment.user.name}}</h2>
+      <p>{{format_date comment.date_created}}</p>
+    </div>
+    <div class="comment-content">
+      <p>{{comment.content}}</p>
+    </div>
+  </section>
+  {{/each}}
 </div>
