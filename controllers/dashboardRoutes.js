@@ -72,4 +72,19 @@ router.get('/edit/:id', withAuth, async (req, res) => {
     }
 });
 
+router.get('/update/:id', withAuth, async (req, res) => {
+    try {
+        const blogPostData = await BlogPost.findByPk(req.params.id);
+
+        const blogPost = blogPostData.get({ plain: true });
+
+        res.render('update', {
+            ...blogPost,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;

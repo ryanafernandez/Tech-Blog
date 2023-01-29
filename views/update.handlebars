@@ -1,0 +1,29 @@
+<div class="edit-container">
+    <section class="blogpost" id="{{id}}">
+        <div class="blogpost-header">
+            <h2>
+            <p>{{title}}</p>
+            </h2>
+            <p>Created by {{user.name}} on {{format_date date_created}}</p>
+        </div>
+        <div class="blogpost-content">
+            <p>{{content}}</p>
+        </div>
+    </section>
+
+    <section class="create-form">
+        <div class="form-group">
+            <label for="post-title">Title: </label>
+            <input class="form-input" type="text" id="post-title" value="{{title}}"/>
+        </div>
+        <div class="form-group">
+            <label for="post-content">Content: </label>
+            <input class="form-input" type="text" id="post-content" value="{{content}}"/>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit" id="update-btn">Update</button>
+        </div>
+    </section>
+</div>
+
+<script src="/js/update.js"></script>
