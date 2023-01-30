@@ -49,25 +49,10 @@ main {
   background-color: #b7c9e2;
 }
 
-.project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
-}
-
-.no-button {
-  background: none;
-  border: none;
-  padding: 0;
+.nav-link-item:hover {
   cursor: pointer;
-  color: #1b89bc;
-  text-decoration: none;
-  font-size: 100%;
 }
 
-.no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
-}
-  
 /********************************** homepage.handlebars **********************************/
 .homepage-container,
 .dashboard-container,
@@ -80,7 +65,8 @@ main {
   padding: 8px 0px;
 }
 
-.blogpost {
+.blogpost,
+.comment {
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -89,8 +75,14 @@ main {
   width: 600px;
 }
 
+.comment {
+  margin-left: 60px;
+  width: 540px;
+}
+
 .blogpost-header,
-.new-comment-header {
+.new-comment-header,
+.comment-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -108,12 +100,20 @@ main {
   color: #6f93c5;
 }
 
-.blogpost-header p {
+.blogpost-header p,
+.comment-header p {
   font-size: 12px;
 }
 
-.blogpost-content {
-  padding: 8px;
+.blogpost-content,
+.comment-content {
+  padding: 16px;
+}
+
+.blogpost-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0px 8px 8px 16px;
 }
 
 /********************************** login.handlebars **********************************/
@@ -151,8 +151,42 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 8px;
+  padding: 16px;
   gap: 8px;
+}
+
+.create-body {
+  gap: 16px;
+}
+
+.create-body .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+#create,
+#create-btn,
+#update-link,
+#delete-btn {
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  /* width: 300px; */
+  height: 42px;
+  color: #fff;
+  background-color: #5385ca;
+  border: #808080 solid 1px;
+  text-decoration: none;
+  padding: 8px;
+}
+
+#delete-btn {
+  background-color: #ca5353;
+}
+
+.dashboard-controls{
+  margin-top: 8px;
 }
 
 .login-footer {
@@ -187,8 +221,16 @@ main {
 }
 
 .login-body button:hover,
-.signup-body button:hover {
+.signup-body button:hover,
+#create:hover,
+#create-btn:hover,
+#update-link:hover {
   background-color: #4a76b4;
+  cursor: pointer;
+}
+
+#delete-btn:hover {
+  background-color: #b44a4a;
   cursor: pointer;
 }
 
@@ -201,6 +243,12 @@ main {
   
   gap: 8px;
   padding: 8px 0px;
+}
+
+.edit-controls {
+  display: flex;
+  margin: 16px;
+  gap: 16px;
 }
 
 .new-comment-wrapper {

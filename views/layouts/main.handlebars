@@ -34,13 +34,17 @@
         </div>
       </div>
       <div class="blognav-right">
-        {{#if logged_in}}
-        <button class="no-button" id="logout">LOGOUT</button>
-        {{else}}
-        <a href="/login">
-          <p>LOGIN</p>
-        </a>
-        {{/if}}
+        <div class="nav-link-item">
+          {{#if logged_in}}
+          <a id="logout">
+            <p>LOGOUT</p>
+          </a>
+          {{else}}
+          <a href="/login">
+            <p>LOGIN</p>
+          </a>
+          {{/if}}
+        </div>
       </div>
     </header>
 
