@@ -11,9 +11,9 @@
     </div>
     <div class="blogpost-footer">
       {{#if logged_in}}
-      <p><a href="/api/blogposts/comment/{{id}}">Leave a comment</a> for {{user.name}}.</p>
+      <p><a href="/api/blogposts/comment/{{id}}">Leave a comment</a> for {{user.name}}</p>
       {{else}}
-      <p><a href="/login">Login</a> to leave a comment.</p>
+      <p><a href="/login">Login</a> to leave a comment</p>
       {{/if}}
     </div>
   </section>
@@ -21,7 +21,9 @@
   {{#each comments as |comment| }}
   <section class="comment">
     <div class="comment-header">
-      <h2>{{comment.user.name}}</h2>
+      <h2>
+        <p>{{comment.user.name}}</p>
+      </h2>
       <p>{{format_date comment.date_created}}</p>
     </div>
     <div class="comment-content">

@@ -1,7 +1,7 @@
 const blogPostEl = $('.blogpost');
 const titleInput = $('#post-title');
 const contentInput = $('#post-content');
-const updateBtn = $('#update-btn');
+const updateBtn = $('#create-btn');
 
 updateBtn.on('click', async (event) => {
     event.preventDefault();
