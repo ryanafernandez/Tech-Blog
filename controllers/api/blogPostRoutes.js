@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { BlogPost, User, Comment } = require("../../models");
+const withAuth = require('../../utils/auth');
 
 router.get('/:id', async (req, res) => {
     try {
@@ -32,7 +33,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.get('/comment/:id', async(req, res) => {
+router.get('/comment/:id', withAuth, async(req, res) => {
     try {
         const blogPostData = await BlogPost.findByPk(req.params.id, {
             include: [
@@ -55,7 +56,7 @@ router.get('/comment/:id', async(req, res) => {
     }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const blogPostData = await BlogPost.create(req.body);
 
@@ -66,7 +67,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
         const blogPostData = await BlogPost.update(
             req.body, { 
@@ -87,7 +88,7 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const blogPostData = await BlogPost.destroy({
             where: {

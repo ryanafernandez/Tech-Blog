@@ -10,7 +10,15 @@ signUpFormEl.on('submit', async (event) => {
     const email = $.trim(signUpEmailEl.val());
     const password = $.trim(signUpPasswordEl.val());
 
-    if (name && email && password) {
+    if (!email) {
+        alert('Please enter an email address');
+    } else if (!password) {
+        alert('Please enter a password');
+    } else if (password.length < 8) {
+        alert('Your password must be at least 8 characters long');
+    } else if (!name) {
+        alert('Please enter your name');
+    } else {
         const response = await fetch('/api/users', {
             method: 'POST',
             body: JSON.stringify({ name, email, password }),

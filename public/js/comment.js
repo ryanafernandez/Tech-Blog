@@ -1,6 +1,6 @@
 const blogPostEl = $('.blogpost');
-const commentEl = $('.new-comment');
-const submitBtn = $('#submit-comment');
+const commentEl = $('.create-body');
+const submitBtn = $('#create-btn');
 const contentEl = $('#comment-content');
 
 submitBtn.on('click', async (event) => {
@@ -18,7 +18,9 @@ submitBtn.on('click', async (event) => {
             headers: { 'Content-Type': 'application/json' },
         });
 
-        if (response.ok) {
+        if (response.redirected) {
+            document.location.replace(response.url);
+        } else if (response.ok) {
             document.location.replace(`/api/blogposts/${blogpost_id}`);
         } else {
             alert(response.statusText);
