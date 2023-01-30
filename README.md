@@ -4,6 +4,8 @@
 
 The motivation for this project was to explore building a full-stack web application using the Model-View-Controller paradigm. This project uses MVC to build a blogging website. Users are able to sign up, create their own blog posts, view other users' posts, and leave comments for the other bloggers. By building this project, I further soldified my knowledge of using sequelize, MySQL2, and express for creating a website back-end. I also gained experience using express-handlebars and express-session for managing the front-end application, along with the user login statuses. 
 
+The deployed project can be viewed through the following link: https://tech-blog-ryanafernandez.herokuapp.com/
+
 ## Table of Contents
 
 - [Installation](#installation)
