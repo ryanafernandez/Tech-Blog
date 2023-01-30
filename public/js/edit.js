@@ -11,7 +11,9 @@ deleteBtn.on('click', async (event) => {
             method: 'DELETE'
         });
 
-        if (response.ok) {
+        if (response.redirected) {
+            document.location.replace(response.url);
+        } else if (response.ok) {
             document.location.replace('/dashboard');
         } else {
             alert(response.statusText);

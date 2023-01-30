@@ -17,8 +17,10 @@ updateBtn.on('click', async (event) => {
             headers: { 'Content-Type': 'application/json' },
         });
 
-        if (response.ok) {
-            document.location.replace(`/dashboard/edit/${id}`);
+        if (response.redirected) {
+            document.location.replace(response.url);
+        } else if (response.ok) {
+            document.location.replace(`/dashboard`);
         } else {
             alert(response.statusText);
         }

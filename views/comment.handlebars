@@ -11,13 +11,16 @@
     </div>
   </section>
   
-  <section class="new-comment-wrapper">
-    <div class="new-comment" logged_in_user="{{logged_in_user}}">
+  <section class="create-form">
+    <h2>Leave a Comment</h2>
+    <div class="create-body" logged_in_user="{{logged_in_user}}">
       <div class="form-group">
         <label for="comment-content"></label>
         <input class="form-input" type="text" id="comment-content" placeholder="Let {{user.name}} know what you think"/>
       </div>
-      <button class="btn btn-primary" id="submit-comment">Submit</button>
+      <div class="form-group">
+          <button class="btn btn-primary" type="submit" id="create-btn">Comment</button>
+      </div>
     </div>
   </section>
 </div>
